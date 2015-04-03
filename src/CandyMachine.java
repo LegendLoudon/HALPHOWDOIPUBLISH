@@ -1,13 +1,15 @@
 
+import java.text.DecimalFormat;
 import java.util.Scanner; 
 
 public class CandyMachine {
+    
+    public static double credit = 0.0;
+    public static int quarters = 0, dimes = 0, nickels = 0;
 
     public static void main(String[] args) {
      
-        int x = 0, input;
-        double credit = 0.0;
-        Money m = new Money();
+        int input;
         
         System.out.println("Credit: " + credit);
         System.out.println("1: Insert Money");
@@ -25,7 +27,7 @@ public class CandyMachine {
             switch (input){
 
                 case 1:
-                    m.insertMoney(credit);
+                    insertMoney();
                     break; 
                 case 2:
                     System.out.println("fk u, this isn't implemented yet");
@@ -46,4 +48,44 @@ public class CandyMachine {
             }   
         }
     }
+    public static double insertMoney() {
+       
+        int input;
+
+        DecimalFormat df = new DecimalFormat("0.00");
+        
+        System.out.println("\nCredit: $" + df.format(credit));
+        System.out.println("1: One dollar bill");
+        System.out.println("2: Quarter");
+        System.out.println("3: Dime");
+        System.out.println("4: Nickel");
+        
+        Scanner scanIn = new Scanner(System.in); 
+        input = scanIn.nextInt();
+        
+            switch(input){
+                case 1:
+                     credit += 1.00;
+                     break;
+                case 2:
+                    credit += 0.25;
+                    quarters++;
+                    break;
+                case 3: 
+                    credit += 0.10;
+                    dimes++;
+                    break; 
+                case 4:
+                    credit += 0.05;
+                    nickels++;
+                    break;
+                default:
+                    System.out.println("Please enter a valid number for the coins listed");
+                    break;        
+            }
+            return credit;
+    }
 }
+    
+          
+
