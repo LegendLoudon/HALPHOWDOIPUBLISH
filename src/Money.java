@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Money extends CandyMachine {
+public class Money {
     
     private double changeEntered = 0.0;
     
@@ -10,10 +10,10 @@ public class Money extends CandyMachine {
         mon = changeEntered;
         
         System.out.println("Credit: $" + changeEntered);
-        System.out.println("1: Quarter");
-        System.out.println("2: Dime");
-        System.out.println("3: Nickel");
-        System.out.println("4: Penny");
+        System.out.println("1: One dollar bill");
+        System.out.println("2: Quarter");
+        System.out.println("3: Dime");
+        System.out.println("4: Nickel");
         
         Scanner scanIn = new Scanner(System.in); 
         input = scanIn.nextInt();
@@ -22,16 +22,16 @@ public class Money extends CandyMachine {
                 case 0: 
                     return changeEntered;
                 case 1:
-                     changeEntered += 0.25;
+                     changeEntered += 1.00;
                      break;
                 case 2:
-                    changeEntered += 0.10;
+                    changeEntered += 0.25;
                     break;
                 case 3: 
-                    changeEntered += 0.05;
+                    changeEntered += 0.10;
                     break; 
                 case 4:
-                    changeEntered += 0.01;
+                    changeEntered += 0.05;
                      break;
                 default:
                     System.out.println("Please enter a valid number for the coins listed");
