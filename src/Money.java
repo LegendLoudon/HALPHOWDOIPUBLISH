@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.text.*;
 
 public class Money {
     
@@ -9,7 +10,9 @@ public class Money {
         int input;
         mon = changeEntered;
         
-        System.out.println("Credit: $" + changeEntered);
+        DecimalFormat df = new DecimalFormat("0.00");
+        
+        System.out.println("\nCredit: $" + df.format(changeEntered));
         System.out.println("1: One dollar bill");
         System.out.println("2: Quarter");
         System.out.println("3: Dime");
